@@ -96,7 +96,15 @@ describe User do
     it {should_not be_valid}
   end
 
-
+  describe "Email address with mixed case" do 
+    let(:mixed_case_email) {"ToMTaIlA@HoTmAiL.cOm"}
+    it "Email should be converted to downcased email before save" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.email).to eq mixed_case_email.downcase
+    end
+    
+  end
 
 
 
