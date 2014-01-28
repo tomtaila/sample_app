@@ -11,8 +11,8 @@ describe "Authentication" do
 
 		describe "Invalid credentials" do
 			before {click_button "Sign in"}
-	  	it {should have_title("Sign in")} #Should reload same page
-	  	it {should have_selector("div.alert.alert-error")}#Should show error message
+	  		it {should have_title("Sign in")} #Should reload same page
+	  		it {should have_selector("div.alert.alert-error")}#Should show error message
 
 	  	#Error message should not persist onto another page being clicked
 	  	describe "after visiting another page" do
@@ -40,8 +40,6 @@ describe "Authentication" do
 	  		it{should_not have_link('Sign out', href: signout_path)}
 	  	end
 	  end
-
-	  
 
 	end
 

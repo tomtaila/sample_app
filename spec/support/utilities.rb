@@ -12,3 +12,13 @@ RSpec::Matchers.define :have_error_message do |message|
 		expect(page).to have_selector('div.alert.alert-error', text: message)
 	end
 end
+
+def valid_create_user(name, email, password)
+	fill_in 'Name', with: name
+	fill_in 'Email', with: email
+	fill_in 'Password', with: password
+	fill_in 'Confirmation', with: password
+end
+
+
+
